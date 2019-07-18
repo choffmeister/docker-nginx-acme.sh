@@ -1,7 +1,7 @@
 # nginx-acme.sh
 
 ```
-# example.conf
+# conf.d/example.conf
 server {
     listen 443 ssl;
     ssl_certificate /root/.acme.sh/domain.com/fullchain.cer;
@@ -17,7 +17,7 @@ server {
 docker run -d \
 	  -p 80:80 \
 	  -p 443:443 \
-	  -v "$(PWD)/example.conf:/etc/nginx/conf.d/example.conf:ro" \
+	  -v "$(PWD)/conf.d:/etc/nginx/conf.d:ro" \
 	  -v "$(PWD)/acme.sh:/root/.acme.sh" \
 	  --name nginx-acme.sh-test \
 	  choffmeister/nginx-acme.sh:latest

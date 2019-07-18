@@ -9,8 +9,8 @@ RUN cd /tmp \
 
 COPY docker-entry.sh /docker-entry.sh
 COPY cron.sh /cron.sh
+COPY nginx.conf /etc/nginx/nginx.conf
 WORKDIR /etc/nginx/conf.d
-COPY default.conf /etc/nginx/conf.d/default.conf
 
 VOLUME /root/.acme.sh
 
