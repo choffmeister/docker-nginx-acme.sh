@@ -21,5 +21,6 @@ docker run -d \
     -v "$(PWD)/acme.sh:/root/.acme.sh" \
     --name nginx-acme.sh-test \
     choffmeister/nginx-acme.sh:latest \
-    --issue -d my.domain.com
+    "--issue -d domain.com -d my.domain.com --staging" \
+    "--issue -d domain2.com -d my.domain2.com --staging"
 ```
