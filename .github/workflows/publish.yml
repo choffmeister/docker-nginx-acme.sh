@@ -1,0 +1,20 @@
+name: publish
+on:
+ push:
+   branches:
+     - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: choffmeister
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Docker publish
+        run: make publish

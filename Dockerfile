@@ -4,7 +4,7 @@ RUN apk --no-cache --update add curl openssl socat git
 RUN cd /tmp \
  && git clone https://github.com/Neilpang/acme.sh.git \
  && cd acme.sh \
- && git checkout -b release 2.8.5 | head -n10 \
+ && git checkout -b release 3.0.2 | head -n10 \
  && ./acme.sh --install --home /opt/acme.sh \
  && rm -rf /tmp/acme.sh
 

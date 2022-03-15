@@ -20,7 +20,7 @@ docker run -d \
     -v "$(PWD)/conf.d:/etc/nginx/conf.d:ro" \
     -v "$(PWD)/acme.sh:/root/.acme.sh" \
     --name nginx-acme.sh-test \
-    choffmeister/nginx-acme.sh:latest \
+    ghcr.io/choffmeister/nginx-acme.sh:latest \
     "--issue -d domain.com -d my.domain.com --staging" \
     "--issue -d domain2.com -d my.domain2.com --staging"
 ```

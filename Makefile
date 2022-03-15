@@ -1,4 +1,4 @@
-IMAGE=choffmeister/nginx-acme.sh
+IMAGE=ghcr.io/choffmeister/nginx-acme.sh
 TAG=latest
 
 build:
