@@ -2,10 +2,10 @@ IMAGE=ghcr.io/choffmeister/nginx-acme.sh
 TAG=latest
 
 build:
-	docker build -t "$(IMAGE):$(TAG)" .
+	docker buildx build --platform=linux/amd64 -t "$(IMAGE):$(TAG)" . --load
 
-publish: build
-	docker push "$(IMAGE):$(TAG)"
+publish:
+	docker buildx build --platform=linux/amd64 -t "$(IMAGE):$(TAG)" . --push
 
 test: build
 	docker run --rm -it \
